@@ -1,0 +1,80 @@
+
+<ion-navbar *navbar>
+  <ion-title>
+    Levels
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="levels" >
+
+  <div padding class="animated fadeInDown">
+    <ion-segment [(ngModel)]="levels" >
+      <ion-segment-button value="beginner">
+        Beginner
+      </ion-segment-button>
+      <ion-segment-button value="intermediate">
+        Intermediate
+      </ion-segment-button>
+      <ion-segment-button value="advanced">
+        Advanced
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <video hidden class="hidevid" terry-vid="ctrl.videoCtrl" src="http://npat.club/videos/npat%20cover2.mp4"></video>
+
+  <div [ngSwitch]="levels">
+    <ion-list *ngSwitchWhen="'beginner'" class="card-background-page">
+
+      <ion-card (click)="openPage()" class="animated flipInX">
+        <img src="img/Tinklestars.jpg"/>
+        <div class="card-title"></div>
+        <div class="card-subtitle"></div>
+      </ion-card>
+
+      <ion-card class="animated flipInX">
+        <img src="img/pig.jpg"/>
+      </ion-card>
+
+      <ion-card class="animated flipInX">
+        <img src="img/BABAA.jpg"/>
+        <div class="card-title"></div>
+      </ion-card>
+    </ion-list>
+
+    <ion-list *ngSwitchWhen="'intermediate'">
+      <ion-card class="animated flipInX">
+        <img src="img/inter/humpty.jpg"/>
+        <div class="card-title"></div>
+        <div class="card-subtitle"></div>
+      </ion-card>
+
+      <ion-card class="animated flipInX">
+        <img src="img/inter/littlemiss.jpg"/>
+      </ion-card>
+
+      <ion-card class="animated flipInX">
+        <img src="img/inter/rowboat.jpg"/>
+        <div class="card-title"></div>
+      </ion-card>
+    </ion-list>
+
+    <ion-list *ngSwitchWhen="'advanced'">
+      <ion-card class="animated flipInX">
+        <img src="img/adv/jack.jpg"/>
+        <div class="card-title"></div>
+        <div class="card-subtitle"></div>
+      </ion-card>
+
+      <ion-card class="animated flipInX">
+        <img src="img/adv/lamb.jpg"/>
+      </ion-card>
+
+      <ion-card class="animated flipInX">
+        <img src="img/adv/teapot.jpg"/>
+        <div class="card-title"></div>
+      </ion-card>
+    </ion-list>
+  </div>
+
+</ion-content>
